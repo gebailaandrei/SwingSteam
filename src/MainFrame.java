@@ -16,16 +16,16 @@ public class MainFrame extends JFrame {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
-        this.setSize(700, 600);
+        this.setSize(1150, 700);
 
         tp.setPreferredSize(new Dimension(100, 100));
         mp.setPreferredSize(new Dimension(100, 100));
         bp.setPreferredSize(new Dimension(100, 100));
 
 
-        this.add(tp, BorderLayout.SOUTH);
+        this.add(tp, BorderLayout.NORTH);
         this.add(mp, BorderLayout.CENTER);
-        this.add(bp, BorderLayout.NORTH);
+        this.add(bp, BorderLayout.SOUTH);
         this.setVisible(true);
 
     }
