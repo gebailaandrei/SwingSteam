@@ -28,7 +28,6 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
         menuBar.setBorderPainted(false);
         menuBar.setFocusable(false);
 
-
         setMenus();
         setProfileDropdown();
         setCommunityDropdown();
