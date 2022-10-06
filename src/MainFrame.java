@@ -1,0 +1,33 @@
+import MainFramePanels.BottomPanel;
+import MainFramePanels.MiddlePanel;
+import MainFramePanels.TopPanel;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class MainFrame extends JFrame {
+
+    TopPanel tp = new TopPanel();
+    MiddlePanel mp = new MiddlePanel();
+    BottomPanel bp = new BottomPanel();
+
+
+    MainFrame(){
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new BorderLayout());
+        this.setSize(700, 600);
+
+        tp.setPreferredSize(new Dimension(100, 100));
+        mp.setPreferredSize(new Dimension(100, 100));
+        bp.setPreferredSize(new Dimension(100, 100));
+
+
+        this.add(tp, BorderLayout.SOUTH);
+        this.add(mp, BorderLayout.CENTER);
+        this.add(bp, BorderLayout.NORTH);
+        this.setVisible(true);
+
+    }
+
+}
