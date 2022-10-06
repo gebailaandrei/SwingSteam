@@ -31,7 +31,7 @@ public class TopLeftPanel extends JPanel implements MouseListener {
         steamBtn.setOpaque(false);
         steamBtn.setContentAreaFilled(false);
         steamBtn.setBorderPainted(false);
-        steamBtn.setSize(70, 20);
+        steamBtn.setSize(73, 20);
         steamBtn.setLocation(-10, 0);
         steamBtn.setHorizontalAlignment(SwingConstants.LEFT);
         steamBtn.setIcon(null);
