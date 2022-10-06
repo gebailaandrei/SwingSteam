@@ -27,6 +27,7 @@ public class TopLeftPanel extends JPanel implements MouseListener {
         layeredButtons.add(gamesBtn);
         layeredButtons.add(helpBtn);
 
+
         steamBtn.setFocusable(false);
         steamBtn.setOpaque(false);
         steamBtn.setContentAreaFilled(false);
