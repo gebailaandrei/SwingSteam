@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
-        this.setSize(1150, 700);
+        this.setMinimumSize(new Dimension(1150, 700));
 
         tp.setPreferredSize(new Dimension(100, 100));
         mp.setPreferredSize(new Dimension(100, 100));
