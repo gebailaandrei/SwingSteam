@@ -1,6 +1,7 @@
-import MainFramePanels.BottomPanel;
-import MainFramePanels.MiddlePanel;
-import MainFramePanels.TopPanel;
+package MainFrameComponents;
+
+import MainFrameComponents.MainFrameBottomPanel.BottomPanel;
+import MainFrameComponents.MainFrameTopPanel.TopPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +13,7 @@ public class MainFrame extends JFrame {
     BottomPanel bp = new BottomPanel();
 
 
-    MainFrame(){
+    public MainFrame(){
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
