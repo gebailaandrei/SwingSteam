@@ -119,6 +119,6 @@ public class TopLeftPanel extends JPanel implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
         JButton btn = (JButton)e.getSource();
-        btn.setForeground(Color.WHITE);
+        btn.setForeground(new Color(173, 173, 174));
     }
 }

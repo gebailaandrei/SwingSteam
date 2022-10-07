@@ -3,9 +3,11 @@ package MainFramePanels.TopPanelComponents;
 import MainFramePanels.BottomPanel;
 
 import javax.swing.*;
+import javax.swing.text.rtf.RTFEditorKit;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.UIManager;
 
 public class BottomLeftPanel extends JPanel implements MouseListener {
 
@@ -59,6 +61,7 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
             menu.setContentAreaFilled(false);
             menu.setBackground(null);
             menu.setBorderPainted(false);
+            menu.setFocusPainted(false);
             menu.setMenuLocation(0, 40);
             menu.setFont(new Font("", Font.BOLD, 20));
             menu.setForeground(new Color(173, 173, 174));
