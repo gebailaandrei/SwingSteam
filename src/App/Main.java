@@ -8,8 +8,8 @@ public class Main {
 
 
     public static FriendsFrame friendsFrame;
-    public static boolean loginClosed = true, mainClosed = false, friendsClosed = true;
-    public static boolean loggedIn = true;
+    public static boolean loginClosed = false, mainClosed = true, friendsClosed = true;
+    public static boolean loggedIn = false;
 
     public static void main(String[] args) {
 
