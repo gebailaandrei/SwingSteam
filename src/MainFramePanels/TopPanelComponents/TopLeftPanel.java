@@ -36,7 +36,7 @@ public class TopLeftPanel extends JPanel implements MouseListener {
         steamBtn.setHorizontalAlignment(SwingConstants.LEFT);
         steamBtn.setIcon(null);
         steamBtn.setIconTextGap(0);
-        steamBtn.setForeground(Color.WHITE);
+        steamBtn.setForeground(new Color(173, 173, 174));
         steamBtn.addMouseListener(this);
 
         viewBtn.setFocusable(false);
@@ -48,7 +48,7 @@ public class TopLeftPanel extends JPanel implements MouseListener {
         viewBtn.setHorizontalAlignment(SwingConstants.LEFT);
         viewBtn.setIcon(null);
         viewBtn.setIconTextGap(0);
-        viewBtn.setForeground(Color.WHITE);
+        viewBtn.setForeground(new Color(173, 173, 174));
         viewBtn.addMouseListener(this);
 
         friendsBtn.setFocusable(false);
@@ -60,7 +60,7 @@ public class TopLeftPanel extends JPanel implements MouseListener {
         friendsBtn.setHorizontalAlignment(SwingConstants.LEFT);
         friendsBtn.setIcon(null);
         friendsBtn.setIconTextGap(0);
-        friendsBtn.setForeground(Color.WHITE);
+        friendsBtn.setForeground(new Color(173, 173, 174));
         friendsBtn.addMouseListener(this);
 
         gamesBtn.setFocusable(false);
@@ -72,7 +72,7 @@ public class TopLeftPanel extends JPanel implements MouseListener {
         gamesBtn.setHorizontalAlignment(SwingConstants.LEFT);
         gamesBtn.setIcon(null);
         gamesBtn.setIconTextGap(0);
-        gamesBtn.setForeground(Color.WHITE);
+        gamesBtn.setForeground(new Color(173, 173, 174));
         gamesBtn.addMouseListener(this);
 
         helpBtn.setFocusable(false);
@@ -84,7 +84,7 @@ public class TopLeftPanel extends JPanel implements MouseListener {
         helpBtn.setHorizontalAlignment(SwingConstants.LEFT);
         helpBtn.setIcon(null);
         helpBtn.setIconTextGap(0);
-        helpBtn.setForeground(Color.WHITE);
+        helpBtn.setForeground(new Color(173, 173, 174));
         helpBtn.addMouseListener(this);
 
         this.add(steamBtn);

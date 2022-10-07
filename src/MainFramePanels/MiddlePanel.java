@@ -9,7 +9,7 @@ public class MiddlePanel extends JPanel {
 
     public MiddlePanel(){
 
-        this.setBackground(new Color(62, 65, 66));
+        this.setBackground(new Color(27, 40, 56));
 
     }
 

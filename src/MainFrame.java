@@ -20,7 +20,7 @@ public class MainFrame extends JFrame {
 
         tp.setPreferredSize(new Dimension(100, 100));
         mp.setPreferredSize(new Dimension(100, 100));
-        bp.setPreferredSize(new Dimension(100, 100));
+        bp.setPreferredSize(new Dimension(100, 60));
 
 
         this.add(tp, BorderLayout.NORTH);

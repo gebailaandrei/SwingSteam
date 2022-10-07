@@ -57,10 +57,11 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
             menu.setFocusable(false);
             menu.setOpaque(false);
             menu.setContentAreaFilled(false);
+            menu.setBackground(null);
             menu.setBorderPainted(false);
             menu.setMenuLocation(0, 40);
             menu.setFont(new Font("", Font.BOLD, 20));
-            menu.setForeground(Color.WHITE);
+            menu.setForeground(new Color(173, 173, 174));
         }
 
     }
@@ -80,7 +81,7 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
         for(JMenuItem item : items) {
             item.setPreferredSize(new Dimension(100, 20));
             item.setBackground(new Color(46, 47, 48));
-            item.setForeground(Color.WHITE);
+            item.setForeground(new Color(173, 173, 174));
         }
 
         for(JMenuItem item : items)
@@ -101,7 +102,7 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
         for(JMenuItem item : items) {
             item.setPreferredSize(new Dimension(100, 20));
             item.setBackground(new Color(46, 47, 48));
-            item.setForeground(Color.WHITE);
+            item.setForeground(new Color(173, 173, 174));
         }
 
         for(JMenuItem item : items)
@@ -119,7 +120,7 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
         for(JMenuItem item : items) {
             item.setPreferredSize(new Dimension(100, 20));
             item.setBackground(new Color(46, 47, 48));
-            item.setForeground(Color.WHITE);
+            item.setForeground(new Color(173, 173, 174));
         }
 
         for(JMenuItem item : items)
@@ -140,7 +141,7 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
         for(JMenuItem item : items) {
             item.setPreferredSize(new Dimension(100, 20));
             item.setBackground(new Color(46, 47, 48));
-            item.setForeground(Color.WHITE);
+            item.setForeground(new Color(173, 173, 174));
         }
 
         for(JMenuItem item : items)
