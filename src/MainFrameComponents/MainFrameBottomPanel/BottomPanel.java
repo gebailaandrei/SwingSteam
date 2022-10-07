@@ -1,16 +1,21 @@
-package MainFramePanels;
+package MainFrameComponents.MainFrameBottomPanel;
+
+import FriendsFrameComponents.FriendsFrame;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import static App.Main.friendsClosed;
+import static App.Main.friendsFrame;
+
 public class BottomPanel extends JPanel implements MouseListener {
 
     JButton friendsAndChatBtn = new JButton(), addAGameBtn = new JButton(), downloadsBtn = new JButton();
     JPanel leftPanel = new JPanel(), midPanel = new JPanel(), rightPanel = new JPanel();
-    Icon chatIcon = new ImageIcon("src/MainFramePanels/BottomPanelComponents/FriendsAndChatIcon.png");
-    Icon addGameIcon = new ImageIcon("src/MainFramePanels/BottomPanelComponents/AddAGameIcon.png");
+    Icon chatIcon = new ImageIcon("src/MainFrameComponents/MainFrameBottomPanel/FriendsAndChatIcon.png");
+    Icon addGameIcon = new ImageIcon("src/MainFrameComponents/MainFrameBottomPanel/AddAGameIcon.png");
 
     public BottomPanel(){
 
@@ -61,7 +66,11 @@ public class BottomPanel extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        if(e.getSource() == friendsAndChatBtn){
+            if(friendsClosed){
+                friendsFrame = new FriendsFrame();
+            }
+        }
     }
 
     @Override
