@@ -1,13 +1,9 @@
-package MainFramePanels.TopPanelComponents;
-
-import MainFramePanels.BottomPanel;
+package MainFrameComponents.MainFrameTopPanel;
 
 import javax.swing.*;
-import javax.swing.text.rtf.RTFEditorKit;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.UIManager;
 
 public class BottomLeftPanel extends JPanel implements MouseListener {
 
