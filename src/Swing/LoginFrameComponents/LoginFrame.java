@@ -1,22 +1,21 @@
-package LoginFrameComponents;
+package Swing.LoginFrameComponents;
+
+import Scripts.LoginScript;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.font.TextAttribute;
+import java.io.IOException;
+import java.util.Map;
 
 public class LoginFrame extends JFrame implements MouseListener {
 
-    ImageIcon steamIcon = new ImageIcon("src/LoginFrameComponents/SteamIcon.png");
-    ImageIcon signInIcon = new ImageIcon("src/LoginFrameComponents/SignInIcon.png");
-
-
-    JLabel accNameLbl, passLbl, helpLbl, newUserLbl;
+    JLabel accNameLbl, passLbl;
     JTextField userTxt;
     JPasswordField passTxt;
     JButton loginBtn, helpBtn, newAccBtn;
-    JLabel newAccLbl;
     JCheckBox rememberPass;
     JPanel panel = new JPanel();
 
@@ -45,15 +44,20 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void setHelpBtn(){
 
         helpBtn = new JButton("Help, I can't sign in");
-        helpBtn.setBounds(30, 400, 200, 20);
+        helpBtn.setBounds(25, 400, 200, 20);
         helpBtn.setForeground(new Color(173, 173, 174));
         helpBtn.setOpaque(false);
         helpBtn.setFocusable(false);
         helpBtn.setFocusPainted(false);
         helpBtn.setContentAreaFilled(false);
         helpBtn.setBorderPainted(false);
-        helpBtn.setBackground(new Color(42, 46, 51));
+        helpBtn.setBackground(new Color(33, 35, 40));
         helpBtn.addMouseListener(this);
+
+        Font font = helpBtn.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        helpBtn.setFont(font.deriveFont(attributes));
 
         panel.add(helpBtn);
 
@@ -69,18 +73,17 @@ public class LoginFrame extends JFrame implements MouseListener {
         newAccBtn.setFocusPainted(false);
         newAccBtn.setContentAreaFilled(false);
         newAccBtn.setBorderPainted(false);
-        newAccBtn.setBackground(new Color(42, 46, 51));
+        newAccBtn.setBackground(new Color(33, 35, 40));
         newAccBtn.addMouseListener(this);
+
+        Font font = newAccBtn.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        newAccBtn.setFont(font.deriveFont(attributes));
 
         panel.add(newAccBtn);
 
-        newAccLbl = new JLabel("Don't have a Steam account?");
-        newAccLbl.setBounds(310, 400, 200, 20);
-        newAccLbl.setForeground(new Color(173, 173, 174));
-        newAccLbl.setOpaque(false);
-        newAccLbl.setBackground(new Color(42, 46, 51));
 
-        panel.add(newAccLbl);
 
     }
 
@@ -91,10 +94,10 @@ public class LoginFrame extends JFrame implements MouseListener {
         rememberPass.setForeground(new Color(173, 173, 174));
         rememberPass.setOpaque(false);
         rememberPass.setFocusable(false);
-        rememberPass.setBackground(new Color(42, 46, 51));
+        rememberPass.setBackground(new Color(33, 35, 40));
         rememberPass.setIconTextGap(10);
-        rememberPass.setSelectedIcon(new ImageIcon("src/LoginFrameComponents/CheckedBox.png"));
-        rememberPass.setIcon(new ImageIcon("src/LoginFrameComponents/UncheckedBox.png"));
+        rememberPass.setSelectedIcon(new ImageIcon("src/Swing/LoginFrameComponents/CheckedBox.png"));
+        rememberPass.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/UncheckedBox.png"));
         panel.add(rememberPass);
 
     }
@@ -102,8 +105,9 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void setSignInBtn(){
 
         loginBtn = new JButton();
-        loginBtn.setIcon(signInIcon);
+        loginBtn.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/SignInIcon.png"));
         loginBtn.setBounds(260, 300, 170, 50);
+        loginBtn.addMouseListener(this);
         panel.add(loginBtn);
 
     }
@@ -111,7 +115,7 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void setFields(){
 
         JLabel steamLabel = new JLabel();
-        steamLabel.setIcon(steamIcon);
+        steamLabel.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/SteamIcon.png"));
         steamLabel.setBounds(65, 20, 180, 70);
         panel.add(steamLabel);
 
@@ -124,6 +128,7 @@ public class LoginFrame extends JFrame implements MouseListener {
         userTxt = new JTextField();
         userTxt.setForeground(new Color(173, 173, 174));
         userTxt.setBounds(70, 140, 535, 35);
+        userTxt.setFont(new Font(null, Font.PLAIN, 15));
         userTxt.setBackground(new Color(42, 46, 51));
         userTxt.setCaretColor(Color.WHITE);
         userTxt.setBorder(
@@ -140,6 +145,7 @@ public class LoginFrame extends JFrame implements MouseListener {
         passTxt = new JPasswordField();
         passTxt.setForeground(new Color(173, 173, 174));
         passTxt.setBounds(70, 210, 535, 35);
+        passTxt.setFont(new Font(null, Font.PLAIN, 15));
         passTxt.setBackground(new Color(42, 46, 51));
         passTxt.setCaretColor(Color.WHITE);
         passTxt.setBorder(
@@ -152,7 +158,8 @@ public class LoginFrame extends JFrame implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == loginBtn){
-
+            LoginScript.logIn(userTxt.getText(), String.valueOf(passTxt.getPassword()));
+            System.out.println(userTxt.getText() + " | " + String.valueOf(passTxt.getPassword()));
         }
     }
 
