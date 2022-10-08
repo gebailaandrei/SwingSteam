@@ -1,7 +1,7 @@
-package MainFrameComponents;
+package Swing.MainFrameComponents;
 
-import MainFrameComponents.MainFrameBottomPanel.BottomPanel;
-import MainFrameComponents.MainFrameTopPanel.TopPanel;
+import Swing.MainFrameComponents.MainFrameBottomPanel.BottomPanel;
+import Swing.MainFrameComponents.MainFrameTopPanel.TopPanel;
 
 import javax.swing.*;
 import java.awt.*;

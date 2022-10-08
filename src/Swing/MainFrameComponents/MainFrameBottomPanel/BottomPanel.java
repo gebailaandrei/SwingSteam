@@ -1,6 +1,6 @@
-package MainFrameComponents.MainFrameBottomPanel;
+package Swing.MainFrameComponents.MainFrameBottomPanel;
 
-import FriendsFrameComponents.FriendsFrame;
+import Swing.FriendsFrameComponents.FriendsFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,8 +14,8 @@ public class BottomPanel extends JPanel implements MouseListener {
 
     JButton friendsAndChatBtn = new JButton(), addAGameBtn = new JButton(), downloadsBtn = new JButton();
     JPanel leftPanel = new JPanel(), midPanel = new JPanel(), rightPanel = new JPanel();
-    Icon chatIcon = new ImageIcon("src/MainFrameComponents/MainFrameBottomPanel/FriendsAndChatIcon.png");
-    Icon addGameIcon = new ImageIcon("src/MainFrameComponents/MainFrameBottomPanel/AddAGameIcon.png");
+    Icon chatIcon = new ImageIcon("src/Swing/MainFrameComponents/MainFrameBottomPanel/FriendsAndChatIcon.png");
+    Icon addGameIcon = new ImageIcon("src/Swing/MainFrameComponents/MainFrameBottomPanel/AddAGameIcon.png");
 
     public BottomPanel(){
 

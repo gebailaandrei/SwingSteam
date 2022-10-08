@@ -1,4 +1,4 @@
-package FriendsFrameComponents;
+package Swing.FriendsFrameComponents;
 
 import javax.swing.*;
 import java.awt.*;
