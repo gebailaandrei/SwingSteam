@@ -1,8 +1,5 @@
 package Scripts;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import netscape.javascript.JSObject;
 
 import java.awt.font.GlyphJustificationInfo;
 import java.io.*;
@@ -10,14 +7,13 @@ import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class Account {
+public class Account implements Serializable{
 
-    private String username, pass;
+    public String username, pass;
     private final int id;
 
     List<Account> accounts = new ArrayList<>();
@@ -28,38 +24,8 @@ public class Account {
         this.username = username;
         this.pass = pass;
 
-        Gson gson = new Gson();
+        accounts.add(this);
 
-        try{
-/*            Path path = Paths.get(".accounts");
-            BufferedReader reader = Files.newBufferedReader(path);
-            Type t = new TypeToken<List<Account>>(){}.getType();
-
-            System.out.println(accounts);
-            reader.close();
-
-            accounts.add(this);*/
-
-
-            Scanner scanner = new Scanner(new File("nextid.txt"));
-
-            Type fooType = new TypeToken<Account>() {}.getType();
-            while (scanner.hasNextLine()) {
-                accounts.add(new Gson().fromJson(scanner.nextLine(), fooType));
-            }
-
-            for(int i = 0; i < accounts.size(); i++)
-                System.out.println(accounts.get(i).username);
-
-            String accs = gson.toJson(this);
-            FileWriter writer = new FileWriter(".accounts");
-            writer.write(accs + "\n");
-            writer.write(accs);
-            writer.close();
-
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
 
 
     }
@@ -81,7 +47,7 @@ public class Account {
             throw new RuntimeException(e);
         }
 
-        return id + 1;
+        return id;
     }
 
 }
