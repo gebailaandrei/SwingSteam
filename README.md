@@ -16,10 +16,19 @@ So far the accounts are being saved with the Account class storing them into a l
 
 ![LogIn](READMEss/LogInFrameSS.png)
 
-- Main frame:
+- Main frame: work in progress
 
-[//]: # ![Main](READMEss/MainFrameSS.png)
+<!--- ![Main](READMEss/MainFrameSS.png) --->
 
-- Friends and Chat frame:
+- Friends and Chat frame: work in progress
 
-[//]: # ![Friends and Chat](READMEss/FAndCSS.png)
+<!--- ![Friends and Chat](READMEss/FAndCSS.png) --->
+
+## Soon TODO
+
+- Add profile page in the main frame
+- Add store page
+- Implement database
+  - Store accounts in db - 1 table connected to wishlist table using UID
+  - Store a few games in db - 1 table
+  - Store wishlist games in db - 1 table
