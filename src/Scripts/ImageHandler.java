@@ -15,10 +15,14 @@ public class ImageHandler {
     public static final String SIGN_UP_ICON = "SignUpIcon.png";
     public static final String STEAM_ICON = "SteamIcon.png";
     public static final String UNCHECKED_BOX = "UncheckedBox.png";
+    public static final String STEAM_FRAME_BAR_ICON = "SteamFrameBarIcon.png";
 
     /** Loads an image from the project files and returns it as a ImageIcon */
     public static ImageIcon loadImageIcon(String imgName){
         return new ImageIcon(path + imgName);
+    }
+    public static Image loadImage(String imgName){
+        return loadImageIcon(imgName).getImage();
     }
     /** Resizes image and returns an ImageIcon object */
     public static ImageIcon resizeImageIcon(int newWidth, int newHeight, Image img){
