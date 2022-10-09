@@ -4,6 +4,7 @@ import Scripts.Account;
 import Swing.FriendsFrameComponents.FriendsFrame;
 import Swing.LoginFrameComponents.LoginFrame;
 import Swing.MainFrameComponents.MainFrame;
+import Swing.SignUpFrameComponents.SignUpFrame;
 
 public class Main {
 
@@ -12,6 +13,7 @@ public class Main {
     public static boolean loginClosed = false, mainClosed = true, friendsClosed = true;
     public static boolean loggedIn = false;
     public static Account loggedAccount;
+    public static SignUpFrame signUpFrame;
 
     public static void main(String[] args) {
         Account andrei = new Account("Andrei", "admin");

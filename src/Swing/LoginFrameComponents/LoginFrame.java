@@ -1,5 +1,6 @@
 package Swing.LoginFrameComponents;
 
+import App.Main;
 import Scripts.LoginScript;
 import Swing.SignUpFrameComponents.SignUpFrame;
 
@@ -34,7 +35,7 @@ public class LoginFrame extends JFrame implements MouseListener {
         setCheckBox();
         setSignInBtn();
         setHelpBtn();
-        setNewAccBtnAndLbl();
+        setNewAccBtn();
 
         this.add(panel);
         this.setVisible(true);
@@ -62,7 +63,7 @@ public class LoginFrame extends JFrame implements MouseListener {
 
     }
 
-    public void setNewAccBtnAndLbl(){
+    public void setNewAccBtn(){
 
         newAccBtn = new JButton("Create a free account");
         newAccBtn.setBounds(442, 400, 200, 20);
@@ -81,9 +82,6 @@ public class LoginFrame extends JFrame implements MouseListener {
         newAccBtn.setFont(font.deriveFont(attributes));
 
         panel.add(newAccBtn);
-
-
-
     }
 
     public void setCheckBox(){
@@ -159,7 +157,7 @@ public class LoginFrame extends JFrame implements MouseListener {
         if(e.getSource() == loginBtn){
             LoginScript.logIn(userTxt.getText(), String.valueOf(passTxt.getPassword()));
         }else if(e.getSource() == newAccBtn){
-            new SignUpFrame();
+            Main.signUpFrame = new SignUpFrame();
         }
     }
 
