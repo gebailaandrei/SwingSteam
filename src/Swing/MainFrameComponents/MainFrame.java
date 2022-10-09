@@ -1,5 +1,6 @@
 package Swing.MainFrameComponents;
 
+import Scripts.ImageHandler;
 import Swing.MainFrameComponents.MainFrameBottomPanel.BottomPanel;
 import Swing.MainFrameComponents.MainFrameTopPanel.TopPanel;
 
@@ -15,7 +16,9 @@ public class MainFrame extends JFrame {
 
     public MainFrame(){
 
+        this.setTitle("Steam");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setIconImage(ImageHandler.loadImage(ImageHandler.STEAM_FRAME_BAR_ICON));
         this.setLayout(new BorderLayout());
         this.setMinimumSize(new Dimension(1150, 700));
 

@@ -24,6 +24,7 @@ public class LoginFrame extends JFrame implements MouseListener {
     public LoginFrame(){
         this.setTitle("Steam Sign In");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setIconImage(ImageHandler.loadImage(ImageHandler.STEAM_FRAME_BAR_ICON));
         this.setMinimumSize(new Dimension(700, 500));
         this.setResizable(false);
 
@@ -92,7 +93,7 @@ public class LoginFrame extends JFrame implements MouseListener {
         rememberPass.setFocusable(false);
         rememberPass.setBackground(new Color(33, 35, 40));
         rememberPass.setIconTextGap(10);
-        rememberPass.setSelectedIcon(ImageHandler.loadImageIcon(ImageHandler.UNCHECKED_BOX));
+        rememberPass.setSelectedIcon(ImageHandler.loadImageIcon(ImageHandler.CHECKED_BOX));
         rememberPass.setIcon(ImageHandler.loadImageIcon(ImageHandler.UNCHECKED_BOX));
         panel.add(rememberPass);
 

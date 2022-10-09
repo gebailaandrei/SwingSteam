@@ -1,5 +1,7 @@
 package Swing.FriendsFrameComponents;
 
+import Scripts.ImageHandler;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -10,7 +12,9 @@ public class FriendsFrame extends JFrame implements WindowListener {
 
 
     public FriendsFrame(){
+        this.setTitle("Friends and chats");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setIconImage(ImageHandler.loadImage(ImageHandler.STEAM_FRAME_BAR_ICON));
         this.setLayout(new BorderLayout());
         this.setMinimumSize(new Dimension(400, 700));
 
