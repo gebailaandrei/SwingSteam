@@ -1,6 +1,7 @@
 package Swing.LoginFrameComponents;
 
 import Scripts.LoginScript;
+import Swing.SignUpFrameComponents.SignUpFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,9 +35,6 @@ public class LoginFrame extends JFrame implements MouseListener {
         setSignInBtn();
         setHelpBtn();
         setNewAccBtnAndLbl();
-
-
-
 
         this.add(panel);
         this.setVisible(true);
@@ -108,7 +106,6 @@ public class LoginFrame extends JFrame implements MouseListener {
         loginBtn = new JButton();
         loginBtn.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/SignInIcon.png"));
         loginBtn.setBounds(260, 300, 170, 50);
-        loginBtn.setMnemonic(KeyEvent.VK_ENTER);
         loginBtn.addMouseListener(this);
         panel.add(loginBtn);
 
@@ -161,6 +158,8 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == loginBtn){
             LoginScript.logIn(userTxt.getText(), String.valueOf(passTxt.getPassword()));
+        }else if(e.getSource() == newAccBtn){
+            new SignUpFrame();
         }
     }
 
