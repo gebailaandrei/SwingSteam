@@ -1,12 +1,9 @@
 package Swing.SignUpFrameComponents;
 
 import Scripts.ImageHandler;
-import Scripts.LoginScript;
 import Scripts.SignUpScript;
 
 import javax.swing.*;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -91,7 +88,7 @@ public class SignUpFrame extends JFrame implements MouseListener {
 
     public void setNotARobotCheckBox(){
 
-        notARobotLbl = new JLabel(ImageHandler.loadImage(ImageHandler.NOT_A_ROBOT_ICON));
+        notARobotLbl = new JLabel(ImageHandler.loadImageIcon(ImageHandler.NOT_A_ROBOT_ICON));
         notARobotLbl.setBounds(70, 265, 400, 70);
         panel.add(notARobotLbl);
 
@@ -102,8 +99,8 @@ public class SignUpFrame extends JFrame implements MouseListener {
         notARobotCheckBox.setFocusable(false);
         notARobotCheckBox.setBackground(new Color(33, 35, 40));
         notARobotCheckBox.setIconTextGap(10);
-        notARobotCheckBox.setSelectedIcon(ImageHandler.loadImage(ImageHandler.CHECKED_BOX));
-        notARobotCheckBox.setIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
+        notARobotCheckBox.setSelectedIcon(ImageHandler.loadImageIcon(ImageHandler.CHECKED_BOX));
+        notARobotCheckBox.setIcon(ImageHandler.loadImageIcon(ImageHandler.UNCHECKED_BOX));
         panel.add(notARobotCheckBox);
     }
 
@@ -137,15 +134,15 @@ public class SignUpFrame extends JFrame implements MouseListener {
         agreeCheckBox.setFocusable(false);
         agreeCheckBox.setBackground(new Color(33, 35, 40));
         agreeCheckBox.setIconTextGap(10);
-        agreeCheckBox.setSelectedIcon(ImageHandler.loadImage(ImageHandler.CHECKED_BOX));
-        agreeCheckBox.setIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
+        agreeCheckBox.setSelectedIcon(ImageHandler.loadImageIcon(ImageHandler.CHECKED_BOX));
+        agreeCheckBox.setIcon(ImageHandler.loadImageIcon(ImageHandler.UNCHECKED_BOX));
         panel.add(agreeCheckBox);
     }
 
     public void setSignUpBtn(){
 
         signUpBtn = new JButton();
-        signUpBtn.setIcon(ImageHandler.loadImage(ImageHandler.SIGN_UP_ICON));
+        signUpBtn.setIcon(ImageHandler.loadImageIcon(ImageHandler.SIGN_UP_ICON));
         signUpBtn.setBounds(260, 700, 170, 50);
         signUpBtn.addMouseListener(this);
         panel.add(signUpBtn);

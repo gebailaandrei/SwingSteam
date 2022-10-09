@@ -16,11 +16,17 @@ public class ImageHandler {
     public static final String STEAM_ICON = "SteamIcon.png";
     public static final String UNCHECKED_BOX = "UncheckedBox.png";
 
-    public static ImageIcon loadImage(String imgName){
-
+    /** Loads an image from the project files and returns it as a ImageIcon */
+    public static ImageIcon loadImageIcon(String imgName){
         return new ImageIcon(path + imgName);
-
     }
-
+    /** Resizes image and returns an ImageIcon object */
+    public static ImageIcon resizeImageIcon(int newWidth, int newHeight, Image img){
+        return new ImageIcon(img.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH));
+    }
+    /** Resizes image and returns an Image object */
+    public static Image resizeImage(int newWidth, int newHeight, Image img){
+        return img.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+    }
 
 }

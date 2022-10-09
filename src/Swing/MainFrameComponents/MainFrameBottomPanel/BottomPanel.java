@@ -36,13 +36,13 @@ public class BottomPanel extends JPanel implements MouseListener {
             button.setPreferredSize(new Dimension(150, 30));
 
             if(button.equals(friendsAndChatBtn)){
-                friendsAndChatBtn.setIcon(ImageHandler.loadImage(ImageHandler.FRIENDS_AND_CHAT_ICON));
+                friendsAndChatBtn.setIcon(ImageHandler.loadImageIcon(ImageHandler.FRIENDS_AND_CHAT_ICON));
                 friendsAndChatBtn.setText("Chat");
                 friendsAndChatBtn.setHorizontalTextPosition(SwingConstants.LEFT);
             }else if(button.equals(downloadsBtn)){
                 downloadsBtn.setText("Downloads");
             }else{
-                addAGameBtn.setIcon(ImageHandler.loadImage(ImageHandler.ADD_A_GAME_ICON));
+                addAGameBtn.setIcon(ImageHandler.loadImageIcon(ImageHandler.ADD_A_GAME_ICON));
                 addAGameBtn.setText("Add a game");
                 addAGameBtn.setMargin(new Insets(0, 25, 0, 0));
             }

@@ -7,11 +7,9 @@ import Swing.SignUpFrameComponents.SignUpFrame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.font.TextAttribute;
-import java.io.IOException;
 import java.util.Map;
 
 public class LoginFrame extends JFrame implements MouseListener {
@@ -94,8 +92,8 @@ public class LoginFrame extends JFrame implements MouseListener {
         rememberPass.setFocusable(false);
         rememberPass.setBackground(new Color(33, 35, 40));
         rememberPass.setIconTextGap(10);
-        rememberPass.setSelectedIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
-        rememberPass.setIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
+        rememberPass.setSelectedIcon(ImageHandler.loadImageIcon(ImageHandler.UNCHECKED_BOX));
+        rememberPass.setIcon(ImageHandler.loadImageIcon(ImageHandler.UNCHECKED_BOX));
         panel.add(rememberPass);
 
     }
@@ -103,7 +101,7 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void setSignInBtn(){
 
         signInBtn = new JButton();
-        signInBtn.setIcon(ImageHandler.loadImage(ImageHandler.SIGN_IN_ICON));
+        signInBtn.setIcon(ImageHandler.loadImageIcon(ImageHandler.SIGN_IN_ICON));
         signInBtn.setBounds(260, 300, 170, 50);
         signInBtn.addMouseListener(this);
         panel.add(signInBtn);
@@ -113,7 +111,7 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void setFields(){
 
         JLabel steamLabel = new JLabel();
-        steamLabel.setIcon(ImageHandler.loadImage(ImageHandler.STEAM_ICON));
+        steamLabel.setIcon(ImageHandler.loadImageIcon(ImageHandler.STEAM_ICON));
         steamLabel.setBounds(65, 20, 180, 70);
         panel.add(steamLabel);
 
