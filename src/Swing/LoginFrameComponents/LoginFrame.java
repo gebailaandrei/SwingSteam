@@ -4,6 +4,7 @@ import Scripts.LoginScript;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.font.TextAttribute;
@@ -107,6 +108,7 @@ public class LoginFrame extends JFrame implements MouseListener {
         loginBtn = new JButton();
         loginBtn.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/SignInIcon.png"));
         loginBtn.setBounds(260, 300, 170, 50);
+        loginBtn.setMnemonic(KeyEvent.VK_ENTER);
         loginBtn.addMouseListener(this);
         panel.add(loginBtn);
 
@@ -159,7 +161,6 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == loginBtn){
             LoginScript.logIn(userTxt.getText(), String.valueOf(passTxt.getPassword()));
-            System.out.println(userTxt.getText() + " | " + String.valueOf(passTxt.getPassword()));
         }
     }
 
