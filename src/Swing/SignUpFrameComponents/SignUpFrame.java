@@ -22,6 +22,7 @@ public class SignUpFrame extends JFrame implements MouseListener {
 
         this.setTitle("Steam Sign Up");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setIconImage(ImageHandler.loadImage(ImageHandler.STEAM_FRAME_BAR_ICON));
         this.setMinimumSize(new Dimension(700, 850));
         this.setResizable(false);
 
