@@ -1,6 +1,7 @@
 package Swing.LoginFrameComponents;
 
 import App.Main;
+import Scripts.ImageHandler;
 import Scripts.LoginScript;
 import Swing.SignUpFrameComponents.SignUpFrame;
 
@@ -18,7 +19,7 @@ public class LoginFrame extends JFrame implements MouseListener {
     JLabel accNameLbl, passLbl;
     JTextField userTxt;
     JPasswordField passTxt;
-    JButton loginBtn, helpBtn, newAccBtn;
+    JButton signInBtn, helpBtn, newAccBtn;
     JCheckBox rememberPass;
     JPanel panel = new JPanel();
 
@@ -93,26 +94,26 @@ public class LoginFrame extends JFrame implements MouseListener {
         rememberPass.setFocusable(false);
         rememberPass.setBackground(new Color(33, 35, 40));
         rememberPass.setIconTextGap(10);
-        rememberPass.setSelectedIcon(new ImageIcon("src/Swing/LoginFrameComponents/CheckedBox.png"));
-        rememberPass.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/UncheckedBox.png"));
+        rememberPass.setSelectedIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
+        rememberPass.setIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
         panel.add(rememberPass);
 
     }
 
     public void setSignInBtn(){
 
-        loginBtn = new JButton();
-        loginBtn.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/SignInIcon.png"));
-        loginBtn.setBounds(260, 300, 170, 50);
-        loginBtn.addMouseListener(this);
-        panel.add(loginBtn);
+        signInBtn = new JButton();
+        signInBtn.setIcon(ImageHandler.loadImage(ImageHandler.SIGN_IN_ICON));
+        signInBtn.setBounds(260, 300, 170, 50);
+        signInBtn.addMouseListener(this);
+        panel.add(signInBtn);
 
     }
 
     public void setFields(){
 
         JLabel steamLabel = new JLabel();
-        steamLabel.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/SteamIcon.png"));
+        steamLabel.setIcon(ImageHandler.loadImage(ImageHandler.STEAM_ICON));
         steamLabel.setBounds(65, 20, 180, 70);
         panel.add(steamLabel);
 
@@ -154,7 +155,7 @@ public class LoginFrame extends JFrame implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getSource() == loginBtn){
+        if(e.getSource() == signInBtn){
             LoginScript.logIn(userTxt.getText(), String.valueOf(passTxt.getPassword()));
         }else if(e.getSource() == newAccBtn){
             Main.signUpFrame = new SignUpFrame();

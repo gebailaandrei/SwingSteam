@@ -16,17 +16,6 @@ public class Main {
     public static SignUpFrame signUpFrame;
 
     public static void main(String[] args) {
-        Account andrei = new Account("Andrei", "admin");
-        Account andrei1 = new Account("Eugen", "pass");
-        Account andrei2 = new Account("Pula", "mea");
-
-        //Account.storeAccount(andrei);
-        //Account.storeAccount(andrei1);
-        //Account.storeAccount(andrei2);
-
-        //Account.removeAccount(andrei);
-        //Account.removeAccount(andrei1);
-        //Account.removeAccount(andrei2);
 
         //Account.printAccountsList();
         //Account.removeAllAccounts();

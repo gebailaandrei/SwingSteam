@@ -1,5 +1,6 @@
 package Swing.SignUpFrameComponents;
 
+import Scripts.ImageHandler;
 import Scripts.LoginScript;
 import Scripts.SignUpScript;
 
@@ -90,7 +91,7 @@ public class SignUpFrame extends JFrame implements MouseListener {
 
     public void setNotARobotCheckBox(){
 
-        notARobotLbl = new JLabel(new ImageIcon("src/Swing/SignUpFrameComponents/NotARobotIcon.png"));
+        notARobotLbl = new JLabel(ImageHandler.loadImage(ImageHandler.NOT_A_ROBOT_ICON));
         notARobotLbl.setBounds(70, 265, 400, 70);
         panel.add(notARobotLbl);
 
@@ -101,8 +102,8 @@ public class SignUpFrame extends JFrame implements MouseListener {
         notARobotCheckBox.setFocusable(false);
         notARobotCheckBox.setBackground(new Color(33, 35, 40));
         notARobotCheckBox.setIconTextGap(10);
-        notARobotCheckBox.setSelectedIcon(new ImageIcon("src/Swing/LoginFrameComponents/CheckedBox.png"));
-        notARobotCheckBox.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/UncheckedBox.png"));
+        notARobotCheckBox.setSelectedIcon(ImageHandler.loadImage(ImageHandler.CHECKED_BOX));
+        notARobotCheckBox.setIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
         panel.add(notARobotCheckBox);
     }
 
@@ -136,15 +137,15 @@ public class SignUpFrame extends JFrame implements MouseListener {
         agreeCheckBox.setFocusable(false);
         agreeCheckBox.setBackground(new Color(33, 35, 40));
         agreeCheckBox.setIconTextGap(10);
-        agreeCheckBox.setSelectedIcon(new ImageIcon("src/Swing/LoginFrameComponents/CheckedBox.png"));
-        agreeCheckBox.setIcon(new ImageIcon("src/Swing/LoginFrameComponents/UncheckedBox.png"));
+        agreeCheckBox.setSelectedIcon(ImageHandler.loadImage(ImageHandler.CHECKED_BOX));
+        agreeCheckBox.setIcon(ImageHandler.loadImage(ImageHandler.UNCHECKED_BOX));
         panel.add(agreeCheckBox);
     }
 
     public void setSignUpBtn(){
 
         signUpBtn = new JButton();
-        signUpBtn.setIcon(new ImageIcon("src/Swing/SignUpFrameComponents/SignUpIcon.png"));
+        signUpBtn.setIcon(ImageHandler.loadImage(ImageHandler.SIGN_UP_ICON));
         signUpBtn.setBounds(260, 700, 170, 50);
         signUpBtn.addMouseListener(this);
         panel.add(signUpBtn);

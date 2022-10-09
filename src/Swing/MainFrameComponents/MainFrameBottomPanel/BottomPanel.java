@@ -1,5 +1,6 @@
 package Swing.MainFrameComponents.MainFrameBottomPanel;
 
+import Scripts.ImageHandler;
 import Swing.FriendsFrameComponents.FriendsFrame;
 
 import javax.swing.*;
@@ -14,8 +15,6 @@ public class BottomPanel extends JPanel implements MouseListener {
 
     JButton friendsAndChatBtn = new JButton(), addAGameBtn = new JButton(), downloadsBtn = new JButton();
     JPanel leftPanel = new JPanel(), midPanel = new JPanel(), rightPanel = new JPanel();
-    Icon chatIcon = new ImageIcon("src/Swing/MainFrameComponents/MainFrameBottomPanel/FriendsAndChatIcon.png");
-    Icon addGameIcon = new ImageIcon("src/Swing/MainFrameComponents/MainFrameBottomPanel/AddAGameIcon.png");
 
     public BottomPanel(){
 
@@ -37,13 +36,13 @@ public class BottomPanel extends JPanel implements MouseListener {
             button.setPreferredSize(new Dimension(150, 30));
 
             if(button.equals(friendsAndChatBtn)){
-                friendsAndChatBtn.setIcon(chatIcon);
+                friendsAndChatBtn.setIcon(ImageHandler.loadImage(ImageHandler.FRIENDS_AND_CHAT_ICON));
                 friendsAndChatBtn.setText("Chat");
                 friendsAndChatBtn.setHorizontalTextPosition(SwingConstants.LEFT);
             }else if(button.equals(downloadsBtn)){
                 downloadsBtn.setText("Downloads");
             }else{
-                addAGameBtn.setIcon(addGameIcon);
+                addAGameBtn.setIcon(ImageHandler.loadImage(ImageHandler.ADD_A_GAME_ICON));
                 addAGameBtn.setText("Add a game");
                 addAGameBtn.setMargin(new Insets(0, 25, 0, 0));
             }
