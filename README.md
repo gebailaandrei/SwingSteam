@@ -18,8 +18,8 @@ So far the accounts are being saved with the Account class storing them into a l
 
 - Main frame:
 
-[comment]: <> ![Main](READMEss/MainFrameSS.png)
+[//]: # ![Main](READMEss/MainFrameSS.png)
 
 - Friends and Chat frame:
 
-[comment]: <> ![Friends and Chat](READMEss/FAndCSS.png)
+[//]: # ![Friends and Chat](READMEss/FAndCSS.png)
