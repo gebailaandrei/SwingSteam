@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class ImageHandler {
 
-    private static String path = "src/Images/";
+    private static String path = "src/main/java/Images/";
 
     public static final String ADD_A_GAME_ICON = "AddAGameIcon.png";
     public static final String CHECKED_BOX = "CheckedBox.png";
