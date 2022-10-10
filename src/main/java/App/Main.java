@@ -1,6 +1,7 @@
 package App;
 
 import Scripts.Account;
+import Scripts.DB;
 import Swing.FriendsFrameComponents.FriendsFrame;
 import Swing.LoginFrameComponents.LoginFrame;
 import Swing.MainFrameComponents.MainFrame;
@@ -19,6 +20,8 @@ public class Main {
 
         //Account.printAccountsList();
         //Account.removeAllAccounts();
+
+        DB db = new DB();
 
         LoginFrame loginFrame = new LoginFrame();
         while (!loggedIn){ System.out.print(""); }
