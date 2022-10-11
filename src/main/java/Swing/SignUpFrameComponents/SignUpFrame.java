@@ -1,5 +1,7 @@
 package Swing.SignUpFrameComponents;
 
+import App.Main;
+import Scripts.DB;
 import Scripts.ImageHandler;
 import Scripts.SignUpScript;
 
@@ -155,7 +157,8 @@ public class SignUpFrame extends JFrame implements MouseListener {
         if(e.getSource() == signUpBtn){
             if(userTxt.getText().length() >= 1 && passTxt.getPassword().length >= 1
                     && notARobotCheckBox.isSelected() && agreeCheckBox.isSelected()) {
-                SignUpScript.signUp(userTxt.getText(), String.valueOf(passTxt.getPassword()));
+                DB.insertAccount(userTxt.getText(), String.valueOf(passTxt.getPassword()));
+                Main.signUpFrame.dispose();
             }
         }
     }
