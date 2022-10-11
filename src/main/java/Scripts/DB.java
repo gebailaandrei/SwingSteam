@@ -1,43 +1,32 @@
 package Scripts;
 
 import java.sql.*;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /** For now files will be used instead of a database */
 public class DB {
 
-    private static String url = "jdbc:mysql://127.0.0.1:3306/steam";
-    private static String uname = "root";
-    private static String pass = "admin";
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/steam";
+    private static final String uname = "root";
+    private static final String pass = "admin";
 
-    private static Connection con;
     private static Statement statement;
     private static ResultSet result;
     private static String query;
 
-    /** USE THIS FOR MAkiNG CHANGES TO THE DB WITHOUT RUNNING THE WHOLE PROJECT */
+    /** USE THIS FOR MAKING CHANGES TO THE DB WITHOUT RUNNING THE WHOLE PROJECT + TESTING */
     public static void main(String[] args) {
         DB db = new DB();
 
-
         Account.printAccountsList();
-
-        //insertAccount(5, "andrei", "pass");
-        //deleteAccount("andrei");
-        //System.out.println(getNumberOfAccounts());
 
     }
     /** DB object needs to be created when program start running to establish the connection with the database */
     public DB() {
 
         try {
-            con = DriverManager.getConnection(url, uname, pass);
+            Connection con = DriverManager.getConnection(url, uname, pass);
             statement = con.createStatement();
 
         } catch (SQLException e) {
@@ -158,7 +147,18 @@ public class DB {
             throw new RuntimeException(e);
         }
     }
+    /** Checks if and account with the given id exists */
+    public static boolean checkAccountExists(int id){
+        query = "SELECT * FROM accounts WHERE id = '" + id + "';";
 
+        try {
+            result = statement.executeQuery(query);
+            return result.next();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    /** Checks if and account with the given username exists */
     public static boolean checkAccountExists(String username){
         query = "SELECT * FROM accounts WHERE username = '" + username + "';";
 
@@ -169,7 +169,7 @@ public class DB {
             throw new RuntimeException(e);
         }
     }
-
+    /** Returns a List with all the accounts stored in the db */
     public static List<Account> getAccountsList(){
 
         query = "SELECT * FROM accounts;";

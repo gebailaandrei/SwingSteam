@@ -17,10 +17,6 @@ public class Main {
     public static SignUpFrame signUpFrame;
 
     public static void main(String[] args) {
-
-        //Account.printAccountsList();
-        //Account.removeAllAccounts();
-
         DB db = new DB();
 
         LoginFrame loginFrame = new LoginFrame();
