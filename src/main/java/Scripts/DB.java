@@ -19,7 +19,7 @@ public class DB {
     public static void main(String[] args) {
         DB db = new DB();
 
-        Account.printAccountsList();
+        DB.printAccountsList();
 
     }
     /** DB object needs to be created when program start running to establish the connection with the database */
@@ -32,6 +32,18 @@ public class DB {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    /** Adds an account to the database with the specified details */
+    public static void insertAccount(String username, String password){
+
+        query = "INSERT INTO accounts (id, username, pass) VALUES (" + (getNumberOfAccounts() + 1) + ", '" + username + "', '" + password + "');";
+
+        try {
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
     /** Adds an account to the database with the specified details */
     public static void insertAccount(int id, String username, String password){
@@ -169,21 +181,19 @@ public class DB {
             throw new RuntimeException(e);
         }
     }
-    /** Returns a List with all the accounts stored in the db */
-    public static List<Account> getAccountsList(){
+    /** Prints the list of all stored accounts */
+    public static void printAccountsList(){
 
         query = "SELECT * FROM accounts;";
-        List<Account> list = new ArrayList<>();
 
         try {
             result = statement.executeQuery(query);
             while (result.next())
-                list.add(new Account(result.getInt(1),
-                        result.getString("username"),
-                        result.getString("pass")));
+                System.out.println(result.getInt(1) + " " +
+                        result.getString("username") + " " +
+                        result.getString("pass"));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return list;
     }
 }
