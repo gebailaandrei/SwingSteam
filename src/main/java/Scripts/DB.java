@@ -1,8 +1,6 @@
 package Scripts;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /** For now files will be used instead of a database */
 public class DB {
@@ -108,6 +106,19 @@ public class DB {
         }
     }
     /** Gets the password of the account with the specified username */
+    public static String getPassword(int id){
+
+        query = "SELECT pass FROM accounts WHERE id = '" + id + "';";
+
+        try {
+            result = statement.executeQuery(query);
+            result.next();
+            return result.getString("pass");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    /** Gets the password of the account with the specified username */
     public static String getPassword(String user){
 
         query = "SELECT pass FROM accounts WHERE username = '" + user + "';";
@@ -195,5 +206,13 @@ public class DB {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    /** Changes the username of the account with the given id */
+    public static void changeUsername(){
+
+    }
+    /** Changes the password of the account with the given id */
+    public static void changePassword(){
+
     }
 }
