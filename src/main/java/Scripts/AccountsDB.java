@@ -2,35 +2,13 @@ package Scripts;
 
 import java.sql.*;
 
+import static Scripts.DBConnection.query;
+import static Scripts.DBConnection.statement;
+import static Scripts.DBConnection.result;
+
 /** For now files will be used instead of a database */
-public class DB {
+public class AccountsDB {
 
-    private static final String url = "jdbc:mysql://127.0.0.1:3306/steam";
-    private static final String uname = "root";
-    private static final String pass = "admin";
-
-    private static Statement statement;
-    private static ResultSet result;
-    private static String query;
-
-    /** USE THIS FOR MAKING CHANGES TO THE DB WITHOUT RUNNING THE WHOLE PROJECT + TESTING */
-    public static void main(String[] args) {
-        DB db = new DB();
-
-        DB.printAccountsList();
-
-    }
-    /** DB object needs to be created when program start running to establish the connection with the database */
-    public DB() {
-
-        try {
-            Connection con = DriverManager.getConnection(url, uname, pass);
-            statement = con.createStatement();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
     /** Adds an account to the database with the specified details */
     public static void insertAccount(String username, String password){
 
@@ -161,7 +139,7 @@ public class DB {
         }
     }
     /** Wipe accounts table */
-    private void wipeAccounts(){
+    private static void wipeAccounts(){
         query = "DELETE * FROM accounts";
 
         try {
@@ -215,4 +193,5 @@ public class DB {
     public static void changePassword(){
 
     }
+
 }
