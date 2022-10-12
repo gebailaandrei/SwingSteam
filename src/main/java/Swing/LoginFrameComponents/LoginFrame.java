@@ -1,7 +1,7 @@
 package Swing.LoginFrameComponents;
 
 import App.Main;
-import Scripts.DB;
+import Scripts.AccountsDB;
 import Scripts.ImageHandler;
 import Swing.SignUpFrameComponents.SignUpFrame;
 
@@ -10,7 +10,6 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.font.TextAttribute;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.Objects;
 
@@ -158,8 +157,8 @@ public class LoginFrame extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == signInBtn){
 
-            if(DB.checkAccountExists(userTxt.getText()) &&
-                    Objects.equals(DB.getPassword(userTxt.getText()),
+            if(AccountsDB.checkAccountExists(userTxt.getText()) &&
+                    Objects.equals(AccountsDB.getPassword(userTxt.getText()),
                             String.valueOf(passTxt.getPassword())))
                 Main.loggedIn = true;
             else

@@ -1,6 +1,6 @@
 package App;
 
-import Scripts.DB;
+import Scripts.AccountsDB;
 import Swing.FriendsFrameComponents.FriendsFrame;
 import Swing.LoginFrameComponents.LoginFrame;
 import Swing.MainFrameComponents.MainFrame;
@@ -15,7 +15,7 @@ public class Main {
     public static SignUpFrame signUpFrame;
 
     public static void main(String[] args) {
-        DB db = new DB();
+        AccountsDB accountsDB = new AccountsDB();
 
         LoginFrame loginFrame = new LoginFrame();
         while (!loggedIn){ System.out.print(""); }
