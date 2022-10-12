@@ -3,7 +3,6 @@ package Swing.LoginFrameComponents;
 import App.Main;
 import Scripts.DB;
 import Scripts.ImageHandler;
-import Scripts.LoginScript;
 import Swing.SignUpFrameComponents.SignUpFrame;
 
 import javax.swing.*;

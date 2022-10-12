@@ -200,8 +200,8 @@ public class DB {
         try {
             result = statement.executeQuery(query);
             while (result.next())
-                System.out.println(result.getInt(1) + " " +
-                        result.getString("username") + " " +
+                System.out.printf("%-5s %-15s %-15s %n", result.getInt(1),
+                        result.getString("username"),
                         result.getString("pass"));
         } catch (SQLException e) {
             throw new RuntimeException(e);
