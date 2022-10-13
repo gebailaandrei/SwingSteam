@@ -13,8 +13,8 @@ public class TopPanel extends JPanel {
         this.setBackground(new Color(42, 46, 51));
         this.setLayout(null);
 
-        topLeftPanel.setBounds(0, 0, 400, 34);
-        bottomLeftPanel.setBounds(0, 60, 600, 50);
+        topLeftPanel.setBounds(0, 0, 400, 20);
+        bottomLeftPanel.setBounds(0, 30, 600, 45);
 
 
         this.add(topLeftPanel);

@@ -51,14 +51,14 @@ public class BottomLeftPanel extends JPanel implements MouseListener {
         JMenu[] menus = {profileDrop, communityDrop, libraryDrop, storeDrop};
 
         for(JMenu menu : menus){
-            menu.setPreferredSize(new Dimension(150, 40));
+            menu.setPreferredSize(new Dimension(150, 45));
             menu.setFocusable(false);
             menu.setOpaque(false);
             menu.setContentAreaFilled(false);
             menu.setBackground(null);
             menu.setBorderPainted(false);
             menu.setFocusPainted(false);
-            menu.setMenuLocation(0, 40);
+            menu.setMenuLocation(0, 35);
             menu.setFont(new Font("", Font.BOLD, 20));
             menu.setForeground(new Color(173, 173, 174));
         }

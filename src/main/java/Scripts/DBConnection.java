@@ -23,8 +23,9 @@ public class DBConnection {
     // Used for testing the database
     public static void main(String[] args) {
 
-        GamesDB.insertGame("Asteroids", "this/is/an/url/img.png", "Best game ever. COMING OUT SOON!!!");
-        System.out.println(GamesDB.getNumberOfGames());
+        System.out.println(GamesDB.getGameDetails(1)[0] + " | " + GamesDB.getGameDetails(1)[1] + " | "
+                + GamesDB.getGameDetails(1)[2]);
+        //System.out.println(GamesDB.getNumberOfGames());
 
     }
 }
