@@ -21,6 +21,20 @@ public class GamesDB {
         }
 
     }
+    /** Gets a games details based on the given GID */
+    public static String[] getGameDetails(int GID){
+        query = "SELECT * FROM games WHERE GID = " + GID + ";";
+
+        try {
+            result = statement.executeQuery(query);
+            result.next();
+            return new String[]{result.getString(2),
+                                result.getString(3),
+                                result.getString(4)};
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     /** Returns the number of games in the db */
     public static int getNumberOfGames(){
         query = "SELECT COUNT(*) FROM games;";
