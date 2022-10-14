@@ -1,10 +1,10 @@
-package Swing.MainFrameComponents;
+package Swing.Frames.MainFrameComponents;
 
 import Scripts.ImageHandler;
-import Swing.MainFrameComponents.MainFrameBottomPanel.BottomPanel;
-import Swing.MainFrameComponents.MainFrameMiddlePanel.DefaultMiddlePanel;
-import Swing.MainFrameComponents.MainFrameMiddlePanel.StoreGameSearchPanel;
-import Swing.MainFrameComponents.MainFrameTopPanel.TopPanel;
+import Swing.Frames.MainFrameComponents.MainFrameBottomPanel.BottomPanel;
+import Swing.Frames.MainFrameComponents.MainFrameMiddlePanel.DefaultMiddlePanel;
+import Swing.Frames.MainFrameComponents.MainFrameMiddlePanel.StoreGameSearchPanel;
+import Swing.Frames.MainFrameComponents.MainFrameTopPanel.TopPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,6 +22,7 @@ public class MainFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setIconImage(ImageHandler.loadImage(ImageHandler.STEAM_FRAME_BAR_ICON));
         this.setLayout(new BorderLayout());
+        this.setBackground(new Color(27, 40, 46));
         this.setMinimumSize(new Dimension(1030, 650));
         // Set and add bottom and top panels of the frame
         tp.setPreferredSize(new Dimension(100, 65));
@@ -32,8 +33,7 @@ public class MainFrame extends JFrame {
         // Set and add middle panel of the frame
         //mp = new DefaultMiddlePanel();
         //this.add(mp, BorderLayout.CENTER);
-        storeGameSearchPanel = new StoreGameSearchPanel(new Dimension(this.getWidth(),
-                this.getHeight() - tp.getHeight() - bp.getHeight()));
+        storeGameSearchPanel = new StoreGameSearchPanel();
         resized();
         this.add(storeGameSearchPanel, BorderLayout.CENTER);
 

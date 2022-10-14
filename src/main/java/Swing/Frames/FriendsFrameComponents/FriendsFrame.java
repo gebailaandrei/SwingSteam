@@ -1,4 +1,4 @@
-package Swing.FriendsFrameComponents;
+package Swing.Frames.FriendsFrameComponents;
 
 import Scripts.ImageHandler;
 

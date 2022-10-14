@@ -1,4 +1,4 @@
-package Swing.MainFrameComponents.MainFrameTopPanel;
+package Swing.Frames.MainFrameComponents.MainFrameTopPanel;
 
 import javax.swing.*;
 import java.awt.*;

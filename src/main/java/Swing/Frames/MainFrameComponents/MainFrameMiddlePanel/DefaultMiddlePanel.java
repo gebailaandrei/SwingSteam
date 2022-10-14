@@ -1,4 +1,4 @@
-package Swing.MainFrameComponents.MainFrameMiddlePanel;
+package Swing.Frames.MainFrameComponents.MainFrameMiddlePanel;
 
 import javax.swing.*;
 import java.awt.*;

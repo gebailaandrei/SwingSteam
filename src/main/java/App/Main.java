@@ -1,12 +1,11 @@
 package App;
 
 import Scripts.AccountsDB;
-import Swing.FriendsFrameComponents.FriendsFrame;
-import Swing.LoginFrameComponents.LoginFrame;
-import Swing.MainFrameComponents.MainFrame;
-import Swing.SignUpFrameComponents.SignUpFrame;
+import Swing.Frames.FriendsFrameComponents.FriendsFrame;
+import Swing.Frames.LoginFrameComponents.LoginFrame;
+import Swing.Frames.MainFrameComponents.MainFrame;
+import Swing.Frames.SignUpFrameComponents.SignUpFrame;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -30,6 +29,7 @@ public class Main {
         loginFrame.dispose();
 
         mainFrame = new MainFrame();
+        mainFrame.setSize(mainFrame.getWidth()+1, mainFrame.getHeight());
 
         mainFrame.addComponentListener(new ComponentAdapter() {
             public void componentResized(ComponentEvent comp) {
@@ -37,14 +37,35 @@ public class Main {
             }
         });
 
-        mainFrame.addWindowStateListener(new WindowStateListener() {
-            public void windowStateChanged(WindowEvent event) {
+/*        mainFrame.addWindowStateListener(event -> {
 
-                if (((event.getNewState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH)
-                    && !((event.getOldState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH)) {
+            if (((event.getNewState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH)
+                && !((event.getOldState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH)) {
+                mainFrame.resized();
+            }else if (!((event.getNewState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH)
+                      && ((event.getOldState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH))  {
+                mainFrame.resized();
+            }
+
+            if(mainFrame.getExtendedState() == Frame.MAXIMIZED_BOTH){
+                mainFrame.resized();
+            }
+        });*/
+
+        mainFrame.addWindowStateListener(new WindowAdapter() {
+            public void windowStateChanged(WindowEvent evt) {
+                int oldState = evt.getOldState();
+                int newState = evt.getNewState();
+
+                if ((oldState & Frame.ICONIFIED) == 0 && (newState & Frame.ICONIFIED) != 0) {
                     mainFrame.resized();
-                }else if (!((event.getNewState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH)
-                          && ((event.getOldState() & Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH))  {
+                } else if ((oldState & Frame.ICONIFIED) != 0 && (newState & Frame.ICONIFIED) == 0) {
+                    mainFrame.resized();
+                }
+
+                if ((oldState & Frame.MAXIMIZED_BOTH) == 0 && (newState & Frame.MAXIMIZED_BOTH) != 0) {
+                    mainFrame.resized();
+                } else if ((oldState & Frame.MAXIMIZED_BOTH) != 0 && (newState & Frame.MAXIMIZED_BOTH) == 0) {
                     mainFrame.resized();
                 }
             }

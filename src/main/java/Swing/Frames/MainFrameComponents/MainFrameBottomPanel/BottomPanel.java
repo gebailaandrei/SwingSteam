@@ -1,7 +1,7 @@
-package Swing.MainFrameComponents.MainFrameBottomPanel;
+package Swing.Frames.MainFrameComponents.MainFrameBottomPanel;
 
 import Scripts.ImageHandler;
-import Swing.FriendsFrameComponents.FriendsFrame;
+import Swing.Frames.FriendsFrameComponents.FriendsFrame;
 
 import javax.swing.*;
 import java.awt.*;

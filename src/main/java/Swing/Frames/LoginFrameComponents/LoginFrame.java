@@ -1,9 +1,9 @@
-package Swing.LoginFrameComponents;
+package Swing.Frames.LoginFrameComponents;
 
 import App.Main;
 import Scripts.AccountsDB;
 import Scripts.ImageHandler;
-import Swing.SignUpFrameComponents.SignUpFrame;
+import Swing.Frames.SignUpFrameComponents.SignUpFrame;
 
 import javax.swing.*;
 import java.awt.*;
