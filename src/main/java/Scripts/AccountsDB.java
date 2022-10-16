@@ -22,9 +22,9 @@ public class AccountsDB {
 
     }
     /** Adds an account to the database with the specified details */
-    public static void insertAccount(int id, String username, String password){
+    public static void insertAccount(int id, String username, String password, String description){
 
-        query = "INSERT INTO accounts (id, username, pass) VALUES (" + id + ", '" + username + "', '" + password + "');";
+        query = "INSERT INTO accounts (id, username, pass) VALUES (" + id + ", '" + username + "', '" + password + "', '" + description + "');";
 
         try {
             statement.executeUpdate(query);
