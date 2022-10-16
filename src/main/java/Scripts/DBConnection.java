@@ -23,8 +23,10 @@ public class DBConnection {
     // Used for testing the database
     public static void main(String[] args) {
 
-        System.out.println(GamesDB.getGameDetails(1)[0] + " | " + GamesDB.getGameDetails(1)[1] + " | "
-                + GamesDB.getGameDetails(1)[2]);
+        //GamesDB.insertGame("CovidBattle", "src/images/covidbattle.png", "This is the game I made for my capstone project");
+        //GamesDB.deleteGame("CovidBattle");
+        GamesDB.deleteGame(3);
+        GamesDB.printGamesList();
         //System.out.println(GamesDB.getNumberOfGames());
 
     }
