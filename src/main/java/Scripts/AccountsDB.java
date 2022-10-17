@@ -12,7 +12,7 @@ public class AccountsDB {
     /** Adds an account to the database with the specified details */
     public static void insertAccount(String username, String password){
 
-        query = "INSERT INTO accounts (id, username, pass) VALUES (" + (getNumberOfAccounts() + 1) + ", '" + username + "', '" + password + "');";
+        query = "INSERT INTO accounts (id, username, pass) VALUES (" + (getNumberOfAccounts() + 1) + ", \"" + username + "\", \"" + password + "\");";
 
         try {
             statement.executeUpdate(query);
@@ -22,9 +22,9 @@ public class AccountsDB {
 
     }
     /** Adds an account to the database with the specified details */
-    public static void insertAccount(int id, String username, String password, String description){
+    public static void insertAccount(int id, String username, String password){
 
-        query = "INSERT INTO accounts (id, username, pass) VALUES (" + id + ", '" + username + "', '" + password + "', '" + description + "');";
+        query = "INSERT INTO accounts (id, username, pass) VALUES (" + id + ", \"" + username + "\", \"" + password + "\");";
 
         try {
             statement.executeUpdate(query);
@@ -48,7 +48,7 @@ public class AccountsDB {
     /** Deletes an account from the database corresponding to the specified username */
     public static void deleteAccount(String username){
 
-        query = "DELETE FROM accounts WHERE username = '" + username + "';";
+        query = "DELETE FROM accounts WHERE username = \"" + username + "\";";
 
         try {
             statement.executeUpdate(query);
@@ -60,7 +60,7 @@ public class AccountsDB {
     /** Gets the id of the account with the specified username */
     public static int getID(String user){
 
-        query = "SELECT id FROM accounts WHERE username = '" + user + "';";
+        query = "SELECT id FROM accounts WHERE username = \"" + user + "\";";
 
         try {
             result = statement.executeQuery(query);
@@ -73,7 +73,7 @@ public class AccountsDB {
     /** Gets the username of the account with the specified id */
     public static String getUsername(int id){
 
-        query = "SELECT username FROM accounts WHERE id = '" + id + "';";
+        query = "SELECT username FROM accounts WHERE id = \"" + id + "\";";
 
         try {
             result = statement.executeQuery(query);
@@ -86,7 +86,7 @@ public class AccountsDB {
     /** Gets the password of the account with the specified username */
     public static String getPassword(int id){
 
-        query = "SELECT pass FROM accounts WHERE id = '" + id + "';";
+        query = "SELECT pass FROM accounts WHERE id = \"" + id + "\";";
 
         try {
             result = statement.executeQuery(query);
@@ -99,7 +99,7 @@ public class AccountsDB {
     /** Gets the password of the account with the specified username */
     public static String getPassword(String user){
 
-        query = "SELECT pass FROM accounts WHERE username = '" + user + "';";
+        query = "SELECT pass FROM accounts WHERE username = \"" + user + "\";";
 
         try {
             result = statement.executeQuery(query);
@@ -112,7 +112,7 @@ public class AccountsDB {
     /** Gets the id, username and password of the account with the specified id */
     public static String[] getAccDetails(int id){
 
-        query = "SELECT * FROM accounts WHERE id = '" + id + "';";
+        query = "SELECT * FROM accounts WHERE id = \"" + id + "\";";
         String[] details = new String[3];
 
         try {
@@ -139,8 +139,8 @@ public class AccountsDB {
         }
     }
     /** Wipe accounts table */
-    private static void wipeAccounts(){
-        query = "DELETE * FROM accounts";
+    public static void wipeAccounts(){
+        query = "DELETE FROM accounts;";
 
         try {
             statement.executeUpdate(query);
@@ -150,7 +150,7 @@ public class AccountsDB {
     }
     /** Checks if and account with the given id exists */
     public static boolean checkAccountExists(int id){
-        query = "SELECT * FROM accounts WHERE id = '" + id + "';";
+        query = "SELECT * FROM accounts WHERE id = \"" + id + "\";";
 
         try {
             result = statement.executeQuery(query);
@@ -161,7 +161,7 @@ public class AccountsDB {
     }
     /** Checks if and account with the given username exists */
     public static boolean checkAccountExists(String username){
-        query = "SELECT * FROM accounts WHERE username = '" + username + "';";
+        query = "SELECT * FROM accounts WHERE username = \"" + username + "\";";
 
         try {
             result = statement.executeQuery(query);

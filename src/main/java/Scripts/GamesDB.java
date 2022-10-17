@@ -13,8 +13,8 @@ public class GamesDB {
     public static void insertGame(String gameName, String gameImgUrl, String description){
 
         query = "INSERT INTO games (GID, GName, GImage, GDescription) VALUES ("
-                + (getNumberOfGames() + 1) + ", '" + gameName + "', '"
-                + gameImgUrl + "', '" + description + "');";
+                + (getNumberOfGames() + 1) + ", \"" + gameName + "\", \""
+                + gameImgUrl + "\", \"" + description + "\");";
 
         try {
             statement.executeUpdate(query);
@@ -38,7 +38,7 @@ public class GamesDB {
     /** Deletes a game from the database corresponding to the specified game name */
     public static void deleteGame(String name){
 
-        query = "DELETE FROM games WHERE GName = '" + name + "';";
+        query = "DELETE FROM games WHERE GName = \"" + name + "\";";
 
         try {
             statement.executeUpdate(query);
@@ -97,7 +97,7 @@ public class GamesDB {
     public static void printGamesList(){
 
         for(Game game : getGamesList())
-            System.out.printf("%-10s %-30s %-50s %-30s %n", game.getGID(),
+            System.out.printf("%-10s %-50s %-70s %-50s %n", game.getGID(),
                 game.getGameName(),
                 game.getPicURL(),
                 game.getDescription());

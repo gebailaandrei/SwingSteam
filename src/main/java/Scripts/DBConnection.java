@@ -23,10 +23,9 @@ public class DBConnection {
     // Used for testing the database
     public static void main(String[] args) {
 
-        //GamesDB.insertGame("CovidBattle", "src/images/covidbattle.png", "This is the game I made for my capstone project");
-        //GamesDB.deleteGame("CovidBattle");
-        GamesDB.deleteGame(3);
-        GamesDB.printGamesList();
+        //GamesDB.insertGame("Dota 2", "src/main/java/Images/GameIcons/Dota2.jpg", "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on a life of its own.");
+        //GamesDB.deleteGame(2);
+        //GamesDB.printGamesList();
         //System.out.println(GamesDB.getNumberOfGames());
 
     }
