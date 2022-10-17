@@ -1,5 +1,8 @@
 package Swing.Frames.MainFrameComponents.MainFrameMiddlePanel;
 
+import Swing.Frames.MainFrameComponents.MainFrameMiddlePanel.StorePanel.MiddlePanel;
+import Swing.Frames.MainFrameComponents.MainFrameMiddlePanel.StorePanel.RightPanel;
+import Swing.Frames.MainFrameComponents.MainFrameMiddlePanel.StorePanel.TopPanel;
 import Swing.Scroll.MyScrollBarUI;
 import Swing.Scroll.MyScrollPaneLayout;
 
@@ -14,24 +17,26 @@ public class StoreGameSearchPanel extends JPanel implements MouseListener {
 
     JPanel scrollPanel, mainPanel; // The scrollable panel holding everything in one place and the main panel with the smaller panel
     JScrollPane scrollPane; // Pane holding everything in a scrollable panel
-    JPanel topPanel, middlePanel, rightPanel; // Panels with the elements shown
+    TopPanel topPanel;
+    MiddlePanel middlePanel;
+    RightPanel rightPanel;
 
     public StoreGameSearchPanel(){
 
         this.setBackground(new Color(27, 40, 56));
 
-/*        JPanel l, c, r;
-        l = new JPanel();
-        l.setPreferredSize(new Dimension(100, 0));
-        c = new JPanel();
-        c.setLayout(null);
-        r = new JPanel();
-        r.setPreferredSize(new Dimension(100, 0));*/
-
         scrollPanel = new JPanel();
-        //scrollPanel.setLayout(new BorderLayout());
         scrollPanel.setLayout(null);
         scrollPanel.setOpaque(false);
+
+        // Smaller panels
+        topPanel = new TopPanel();
+        middlePanel = new MiddlePanel();
+        rightPanel = new RightPanel();
+
+        scrollPanel.add(topPanel);
+        scrollPanel.add(middlePanel);
+        scrollPanel.add(rightPanel);
 
         scrollPane = new JScrollPane(scrollPanel);
         scrollPane.setComponentZOrder(scrollPane.getVerticalScrollBar(), 0);
@@ -42,31 +47,7 @@ public class StoreGameSearchPanel extends JPanel implements MouseListener {
         scrollPane.setBorder(createEmptyBorder());
         scrollPane.getViewport().setOpaque(false);
         scrollPane.setLayout(new MyScrollPaneLayout());
-
-        // Smaller panels
-        topPanel = new JPanel();
-        middlePanel = new JPanel();
-        rightPanel = new JPanel();
-
-        topPanel.setBounds(10, 0, 980, 150);
-        middlePanel.setBounds(20, 170, 700, 3000);
-        rightPanel.setBounds(740, 170, 240, 500);
-
-        topPanel.setBackground(new Color(34, 61, 88));
-        middlePanel.setBackground(new Color(34, 61, 88));
-        rightPanel.setBackground(new Color(34, 61, 88));
-
-/*        c.add(topPanel);
-        c.add(middlePanel);
-        c.add(rightPanel);
-
-        scrollPanel.add(l, BorderLayout.WEST);
-        scrollPanel.add(c, BorderLayout.CENTER);
-        scrollPanel.add(r, BorderLayout.EAST);*/
-
-        scrollPanel.add(topPanel);
-        scrollPanel.add(middlePanel);
-        scrollPanel.add(rightPanel);
+        //scrollPane.setVerticalScrollBar(new JScrollBar(JScrollBar.VERTICAL));
 
         this.add(scrollPane);
     }

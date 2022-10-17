@@ -3,10 +3,7 @@ package Swing.Scroll;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.RenderingHints;
-//from  w w w. j  a  va  2 s  .c  o m
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JScrollBar;
