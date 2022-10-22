@@ -23,7 +23,7 @@ public class DBConnection {
     // Used for testing the database
     public static void main(String[] args) {
 
-        //GamesDB.insertGame("", "", "");
+        //GamesDB.insertGame("", "", "", "2016-4-21", 10.99f, 66);
         //GamesDB.deleteGame(2);
         GamesDB.printGamesList();
         //System.out.println(GamesDB.getNumberOfGames());

@@ -10,11 +10,12 @@ import static Scripts.DBConnection.result;
 public class GamesDB {
 
     /** Adds a game to the database with the specified details */
-    public static void insertGame(String gameName, String gameImgUrl, String description){
+    public static void insertGame(String gameName, String gameImgUrl, String description, String date, float price, int discount){
 
-        query = "INSERT INTO games (GID, GName, GImage, GDescription) VALUES ("
+        query = "INSERT INTO games (GID, GName, GImage, GDescription, release_date, GPrice, GDiscount) VALUES ("
                 + (getNumberOfGames() + 1) + ", \"" + gameName + "\", \""
-                + gameImgUrl + "\", \"" + description + "\");";
+                + gameImgUrl + "\", \"" + description + "\", \"" + date
+                + "\", \"" + price + "\", \"" + discount + "\");";
 
         try {
             statement.executeUpdate(query);
