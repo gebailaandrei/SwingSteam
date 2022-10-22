@@ -3,7 +3,7 @@ package Swing.Frames.MainFrameComponents.MainFrameMiddlePanels;
 import javax.swing.*;
 import java.awt.*;
 
-public class DefaultMiddlePanel extends JPanel {
+public class DefaultMiddlePanel extends JPanel implements MainFrameMiddlePanel{
 
     public static JFrame parentFrame;
 
@@ -13,4 +13,8 @@ public class DefaultMiddlePanel extends JPanel {
 
     }
 
+    @Override
+    public void updatePanelSize(int width, int height) {
+
+    }
 }

@@ -1,10 +1,13 @@
-package Swing.Frames.MainFrameComponents.MainFrameMiddlePanel;
+package Swing.Frames.MainFrameComponents.MainFrameMiddlePanels;
 
+import App.Main;
 import Scripts.Game;
 import Scripts.GamesDB;
 import Scripts.ImageHandler;
+import Swing.Frames.MainFrame;
 import Swing.Scroll.MyScrollBarUI;
 import Swing.Scroll.MyScrollPaneLayout;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -13,7 +16,7 @@ import java.util.List;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
-public class StoreGameSearchPanel extends JPanel{
+public class StoreGameSearchPanel extends JPanel implements MainFrameMiddlePanel{
 
     JPanel scrollPanel, mainPanel; // The scrollable panel holding everything in one place and the main panel with the smaller panel
     JScrollPane scrollPane; // Pane holding everything in a scrollable panel
@@ -58,7 +61,7 @@ public class StoreGameSearchPanel extends JPanel{
                 topPanel.getHeight() + (Math.max(middlePanel.getHeight(), rightPanel.getHeight() + 30))));
         scrollPanel.setLocation(new Point((scrollPanel.getWidth() - 1000)/2, 0));
     }
-
+    /** MIDDLE PANEL WITH THE LIST OF GAMES */
     public JPanel createMiddlePanel(){
 
         int numberOfGames = GamesDB.getNumberOfGames();
@@ -84,7 +87,7 @@ public class StoreGameSearchPanel extends JPanel{
 
         return panel;
     }
-
+    /** RIGHT PANEL WITH THE FILTERS */
     public JPanel createRightPanel(){
 
         JPanel panel = new JPanel();
@@ -94,7 +97,7 @@ public class StoreGameSearchPanel extends JPanel{
 
         return panel;
     }
-
+    /** TOP PANEL WITH TABS AND SEARCH BAR */
     public JPanel createTopPanel(){
 
         JPanel panel = new JPanel();
@@ -104,7 +107,6 @@ public class StoreGameSearchPanel extends JPanel{
 
         return panel;
     }
-
 
 }
 
@@ -181,7 +183,10 @@ class GameCell extends JPanel implements MouseListener {
     public void mousePressed(MouseEvent e) {}
 
     @Override
-    public void mouseReleased(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {
+        System.out.println(game.getGameName());
+        MainFrame.setMiddlePanel();
+    }
 
     @Override
     public void mouseEntered(MouseEvent e) {
