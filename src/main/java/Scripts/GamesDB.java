@@ -56,7 +56,10 @@ public class GamesDB {
             result.next();
             return new String[]{result.getString(2),
                                 result.getString(3),
-                                result.getString(4)};
+                                result.getString(4),
+                                result.getString(5),
+                                result.getString(6),
+                                result.getString(7)};
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -85,11 +88,14 @@ public class GamesDB {
                 games.add(new Game(Integer.parseInt(result.getString(1)),
                         result.getString(2),
                         result.getString(3),
-                        result.getString(4)));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+                        result.getString(4),
+                        result.getString(5),
+                        Float.parseFloat(result.getString(6)),
+                        Float.parseFloat(result.getString(7))));}
+            } catch (SQLException ex) {
+            throw new RuntimeException(ex);
         }
+
 
         return games;
     }
@@ -97,10 +103,13 @@ public class GamesDB {
     public static void printGamesList(){
 
         for(Game game : getGamesList())
-            System.out.printf("%-10s %-50s %-70s %-50s %n", game.getGID(),
+            System.out.printf("%-10s %-50s %-70s %-50s %-50s %-70s %-50s %n", game.getGID(),
                 game.getGameName(),
                 game.getPicURL(),
-                game.getDescription());
+                game.getDescription(),
+                game.getDate(),
+                game.getPrice(),
+                game.getDiscount());
 
     }
 

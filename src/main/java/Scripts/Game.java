@@ -9,7 +9,8 @@ import lombok.Getter;
 public class Game {
 
     private int GID;
-    private String gameName, picURL, description;
+    private String gameName, picURL, description, date;
+    private float price, discount;
 
 
 }

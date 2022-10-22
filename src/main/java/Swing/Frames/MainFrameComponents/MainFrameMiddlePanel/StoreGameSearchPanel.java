@@ -132,7 +132,7 @@ class GameCell extends JPanel implements MouseListener {
 
         JLabel releaseDate = new JLabel();
         releaseDate.setBounds(390, 15, 75, 20);
-        releaseDate.setText("21 Aug. 2012");
+        releaseDate.setText(game.getDate());
         releaseDate.setForeground(new Color(173, 173, 174));
 
         JLabel ratingIcon = new JLabel();
@@ -141,16 +141,26 @@ class GameCell extends JPanel implements MouseListener {
         ratingIcon.setIcon(img1);
 
         JLabel discount = new JLabel();
+        int discountVal = (int) game.getDiscount();
         discount.setBounds(530, 15, 40, 25);
-        discount.setText("-50%");
-        discount.setForeground(new Color(139,197,63));
-        discount.setHorizontalAlignment(SwingConstants.CENTER);
-        discount.setBackground(new Color(76,107,34));
-        discount.setOpaque(true);
+        if(discountVal != 0) {
+            discount.setText("-" + discountVal + "%");
+            discount.setForeground(new Color(139, 197, 63));
+            discount.setHorizontalAlignment(SwingConstants.CENTER);
+            discount.setBackground(new Color(76, 107, 34));
+            discount.setOpaque(true);
+        }
 
         JLabel price = new JLabel();
         price.setBounds(610, 15, 75, 20);
-        price.setText("Free to play");
+        float priceVal = game.getPrice();
+        if(priceVal == 0){
+            price.setText("Free to play");
+        }else{
+            price.setText(priceVal + "$");
+        }
+
+
         price.setForeground(new Color(173, 173, 174));
         price.setHorizontalAlignment(SwingConstants.RIGHT);
 
