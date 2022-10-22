@@ -1,7 +1,7 @@
 package Swing.Frames.MainFrameComponents.MainFrameBottomPanel;
 
 import Scripts.ImageHandler;
-import Swing.Frames.FriendsFrameComponents.FriendsFrame;
+import Swing.Frames.FriendsFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,12 +11,12 @@ import java.awt.event.MouseListener;
 import static App.Main.friendsClosed;
 import static App.Main.friendsFrame;
 
-public class BottomPanel extends JPanel implements MouseListener {
+public class MainFrameBottomPanel extends JPanel implements MouseListener {
 
     JButton friendsAndChatBtn = new JButton(), addAGameBtn = new JButton(), downloadsBtn = new JButton();
     JPanel leftPanel = new JPanel(), midPanel = new JPanel(), rightPanel = new JPanel();
 
-    public BottomPanel(){
+    public MainFrameBottomPanel(){
 
         this.setBackground(new Color(42, 46, 51));
         this.setLayout(new GridLayout(1, 3));

@@ -1,9 +1,9 @@
 package App;
 
-import Swing.Frames.FriendsFrameComponents.FriendsFrame;
-import Swing.Frames.LoginFrameComponents.LoginFrame;
-import Swing.Frames.MainFrameComponents.MainFrame;
-import Swing.Frames.SignUpFrameComponents.SignUpFrame;
+import Swing.Frames.FriendsFrame;
+import Swing.Frames.LoginFrame;
+import Swing.Frames.MainFrame;
+import Swing.Frames.SignUpFrame;
 import java.awt.event.*;
 
 public class Main {

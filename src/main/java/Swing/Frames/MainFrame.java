@@ -1,9 +1,9 @@
-package Swing.Frames.MainFrameComponents;
+package Swing.Frames;
 
 import Scripts.ImageHandler;
-import Swing.Frames.MainFrameComponents.MainFrameBottomPanel.BottomPanel;
-import Swing.Frames.MainFrameComponents.MainFrameMiddlePanel.DefaultMiddlePanel;
-import Swing.Frames.MainFrameComponents.MainFrameMiddlePanel.StoreGameSearchPanel;
+import Swing.Frames.MainFrameComponents.MainFrameBottomPanel.MainFrameBottomPanel;
+import Swing.Frames.MainFrameComponents.MainFrameMiddlePanels.DefaultMiddlePanel;
+import Swing.Frames.MainFrameComponents.MainFrameMiddlePanels.StoreGameSearchPanel;
 import Swing.Frames.MainFrameComponents.MainFrameTopPanel.TopPanel;
 
 import javax.swing.*;
@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
     TopPanel tp = new TopPanel();
     DefaultMiddlePanel mp = null;
     StoreGameSearchPanel storeGameSearchPanel = null;
-    BottomPanel bp = new BottomPanel();
+    MainFrameBottomPanel bp = new MainFrameBottomPanel();
 
     public MainFrame(){
 

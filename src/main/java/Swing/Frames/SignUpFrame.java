@@ -1,4 +1,4 @@
-package Swing.Frames.SignUpFrameComponents;
+package Swing.Frames;
 
 import App.Main;
 import Scripts.AccountsDB;
