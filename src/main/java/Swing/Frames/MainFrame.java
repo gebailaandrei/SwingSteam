@@ -1,5 +1,6 @@
 package Swing.Frames;
 
+import App.Main;
 import Scripts.ImageHandler;
 import Swing.Frames.MainFrameComponents.MainFrameBottomPanel.MainFrameBottomPanel;
 import Swing.Frames.MainFrameComponents.MainFrameMiddlePanels.DefaultMiddlePanel;
@@ -11,9 +12,9 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
+    StoreGameSearchPanel storeGameSearchPanel;
+    DefaultMiddlePanel defaultMiddlePanel;
     TopPanel tp = new TopPanel();
-    DefaultMiddlePanel mp = null;
-    StoreGameSearchPanel storeGameSearchPanel = null;
     MainFrameBottomPanel bp = new MainFrameBottomPanel();
 
     public MainFrame(){
@@ -31,21 +32,34 @@ public class MainFrame extends JFrame {
         this.add(bp, BorderLayout.SOUTH);
 
         // Set and add middle panel of the frame
-        //mp = new DefaultMiddlePanel();
-        //this.add(mp, BorderLayout.CENTER);
         storeGameSearchPanel = new StoreGameSearchPanel();
         resized();
         this.add(storeGameSearchPanel, BorderLayout.CENTER);
-
-
 
         this.setVisible(true);
     }
 
     public void resized(){
-        System.out.println(getWidth() + " | " + getHeight());
-        storeGameSearchPanel.updatePanelSize(this.getWidth(),
-                this.getHeight() - tp.getHeight() - bp.getHeight());
+        storeGameSearchPanel.updatePanelSize(this.getWidth(), this.getHeight() - tp.getHeight() - bp.getHeight());
+    }
+
+    public void changePanel(int i){
+        switch (i){
+            case 1:
+                this.remove(storeGameSearchPanel);
+                defaultMiddlePanel = new DefaultMiddlePanel();
+                this.add(defaultMiddlePanel, BorderLayout.CENTER);
+                defaultMiddlePanel.revalidate();
+                resized();
+                break;
+            case 2:
+                this.remove(defaultMiddlePanel);
+                storeGameSearchPanel = new StoreGameSearchPanel();
+                this.add(storeGameSearchPanel, BorderLayout.CENTER);
+                storeGameSearchPanel.revalidate();
+                resized();
+                break;
+        }
     }
 
 }

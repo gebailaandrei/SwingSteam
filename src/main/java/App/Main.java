@@ -28,11 +28,16 @@ public class Main {
         mainFrame.addComponentListener(new ComponentAdapter() {
             public void componentResized(ComponentEvent comp) {
                 mainFrame.resized();
+                mainFrame.revalidate();
+                mainFrame.repaint();
             }});
         mainFrame.addWindowStateListener(new WindowAdapter() {
             public void windowStateChanged(WindowEvent evt) {
                 mainFrame.resized();
+                mainFrame.revalidate();
+                mainFrame.repaint();
             }});
+
 
 /*        while (true){
             mainFrame.resized();

@@ -16,7 +16,7 @@ import java.util.List;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
-public class StoreGameSearchPanel extends JPanel implements MainFrameMiddlePanel{
+public class StoreGameSearchPanel extends JPanel{
 
     JPanel scrollPanel, mainPanel; // The scrollable panel holding everything in one place and the main panel with the smaller panel
     JScrollPane scrollPane; // Pane holding everything in a scrollable panel
@@ -52,6 +52,7 @@ public class StoreGameSearchPanel extends JPanel implements MainFrameMiddlePanel
         //scrollPane.setVerticalScrollBar(new JScrollBar(JScrollBar.VERTICAL));
 
         this.add(scrollPane);
+
     }
 
     public void updatePanelSize(int width, int height){
@@ -185,7 +186,7 @@ class GameCell extends JPanel implements MouseListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         System.out.println(game.getGameName());
-        MainFrame.setMiddlePanel();
+        Main.mainFrame.changePanel(1);
     }
 
     @Override
